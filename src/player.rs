@@ -64,6 +64,15 @@ impl Player {
         if self.moving_left {
             dx -= moving_left
         }
+
+        // Check collision with map walls
+        let new_x = self.x + dx;
+        let new_y = self.y + dy;
+
+        if !map.is_wall((new_x.floor() as i32, new_y.floor() as i32)) {
+            self.x = new_x;
+            self.y = new_y;
+        }
     }
 
     pub fn get_position(&self) -> (f32, f32) {
