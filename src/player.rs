@@ -47,11 +47,11 @@ impl Player {
         }
     }
 
-    pub update(&mut self, &crate::map::Map, delta_time: f32) {
+    pub fn update(&mut self, map: &crate::map::Map, delta_time: f32) {
         let mut dx = 0.0;
         let mut dy = 0.0;
         let move_dist = self.speed * delta_time;
-        
+
         if self.moving_up {
             dy -= move_dist;
         }
@@ -62,7 +62,7 @@ impl Player {
             dx += move_dist;
         }
         if self.moving_left {
-            dx -= moving_left
+            dx -= move_dist;
         }
 
         // Check collision with map walls
