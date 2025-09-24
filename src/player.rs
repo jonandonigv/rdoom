@@ -11,7 +11,7 @@ pub struct Player {
 }
 
 impl Player {
-    fn new(x: f32, y: f32) -> Self {
+    pub fn new(x: f32, y: f32) -> Self {
         Player {
             x,
             y,

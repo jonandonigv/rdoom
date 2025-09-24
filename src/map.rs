@@ -10,7 +10,7 @@ impl Map {
 
         for x in 0..width {
             tiles[0][x as usize] = 'W';
-            tiles[height as usize - 1][width as usize] = 'W';
+            tiles[height as usize - 1][x as usize] = 'W';
         }
 
         for y in 0..height {
