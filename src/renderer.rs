@@ -41,6 +41,13 @@ impl Renderer {
         // Render Player
         let (px, py) = player.get_position();
         canvas.set_draw_color(Color::RGB(255, 0, 0));
-        canvas.fill_rect(Rect::new(todo!())).unwrap();
+        canvas
+            .fill_rect(Rect::new(
+                (px * self.tile_size as f32) as i32,
+                (py * self.tile_size as f32) as i32,
+                self.tile_size as u32,
+                self.tile_size as u32,
+            ))
+            .unwrap();
     }
 }
