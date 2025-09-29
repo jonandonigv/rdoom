@@ -6,6 +6,8 @@ use sdl2::video::Window;
 use crate::map::Map;
 use crate::player::Player;
 
+mod raycast;
+
 pub struct Renderer {
     tile_size: i32,
 }
